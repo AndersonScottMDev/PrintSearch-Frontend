@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Data Display</title>
+		<link rel="stylesheet" href="/css/get-all-prints.css" />
+		<script src="/js/get-all-prints.js" defer></script>
+	</head>
+
+	<body class="body-container">
+		<div>
+			<h1>Data from API</h1>
+		</div>
+
+		<form class="form-container" autocomplete="on">
+			<div class="form-labels">
+				<div>
+					<label>PAGE SIZE (Optional) : </label>
+				</div>
+				<div>
+					<label>DRAWING NAME (Optional) : </label>
+				</div>
+				<div>
+					<label>DIAMETER MIN : </label>
+				</div>
+				<div>
+					<label>DIAMETER MAX : </label>
+				</div>
+				<div>
+					<label>FACE LENGTH MIN : </label>
+				</div>
+				<div>
+					<label>FACE LENGTH MAX : </label>
+				</div>
+			</div>
+
+			<div class="form-fields">
+				<div>
+					<input id="pageSize" type="text" name="pageSize" placeholder="Enter Page Size..." />
+				</div>
+				<div>
+					<input id="drawingName" type="text" name="drawingName" placeholder="Enter Drawing Name..." />
+				</div>
+				<div>
+					<input id="diameterMinValue" type="text" name="diameterMinValue" placeholder="Enter Diameter Min" required />
+				</div>
+				<div>
+					<input id="diameterMaxValue" type="text" name="diameterMaxValue" placeholder="Enter Diameter Max" required />
+				</div>
+				<div>
+					<input id="faceLengthMinValue" type="text" name="faceLengthMinValue" placeholder="Enter Face Length Max" required />
+				</div>
+				<div>
+					<input id="faceLengthMaxValue" type="text" name="faceLengthMaxValue" placeholder="Enter Face Length Min" required />
+				</div>
+			</div>
+		</form>
+		<div>
+			<button id="get-all-prints" type="button">Get All Prints</button>
+		</div>
+
+		<div class="table-output">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<!--#01-->
+						<th>PRINT NAME</th>
+						<!--#02-->
+						<th>CUST</th>
+						<!--#03-->
+						<th>OEM</th>
+						<!--#04-->
+						<th>DIA</th>
+						<!--#05-->
+						<th>FACE LENGTH</th>
+						<!--#06-->
+						<th>BEARING MIN</th>
+						<!--#07-->
+						<th>BEARING MAX</th>
+						<!--#08-->
+						<th>CUST PIN</th>
+						<!--#09-->
+						<th>CUST REVISION</th>
+						<!--#10-->
+						<th>DATE</th>
+						<!--#11-->
+						<th>DATE CREATED</th>
+						<!--#12-->
+						<th>ORIGIN CUST</th>
+						<!--#13-->
+						<th>PART NO</th>
+						<!--#14-->
+						<th>PREV PART NO</th>
+						<!--#15-->
+						<th>PROD CODE</th>
+						<!--#16-->
+						<th>REV NUM</th>
+						<!--#17-->
+						<th>STEPS</th>
+						<!--#18-->
+						<th>SUB CONTR</th>
+						<!--#19-->
+						<th>TYPE</th>
+						<!--#20-->
+						<th>DMG PATH</th>
+						<!--#21-->
+						<th>SCAN PATH</th>
+						<!--#22-->
+						<th>PDF PATH</th>
+						<!--#23-->
+					</tr>
+				</thead>
+
+				<tbody id="results" class="results"></tbody>
+			</table>
+		</div>
+		<div class="get-all-prints-bottom">
+			<div id="paginationControls">
+				<button id="prevPage" type="button">Previous</button>
+				<span>
+					<div id="current-page">Page 1</div>
+				</span>
+				<span>
+					<div>&nbsp;of &nbsp;</div>
+				</span>
+				<span>
+					<div id="total-pages">Page 1</div>
+				</span>
+				<button id="nextPage" type="button">Next</button>
+			</div>
+
+			<div class="home">
+				<a href="admin-home.html">Home</a>
+			</div>
+		</div>
+	</body>
+</html>
