@@ -102,7 +102,11 @@ async function getAllPrints() {
 		}
 
 		try {
-			const apiBaseUrl = "https://printdrawingsearchapi-production.up.railway.app";
+			// const apiBaseUrl = "http://127.0.0.1:8082";
+
+			// const loginPage = "https://scottmichaelandersondev.com";
+			const apiBaseUrl = "https://printsearchapp.scottmichaelandersondev.com";
+
 			const response = await fetch(
 				`${apiBaseUrl}/api/pagination/${currentPage}/${pageSize}?sortField=diameterMinValue&drawingName=${drawingName}&diameterMinValue=${diameterMinValue}&diameterMaxValue=${diameterMaxValue}&faceLengthMinValue=${faceLengthMinValue}&faceLengthMaxValue=${faceLengthMaxValue}`,
 				{
@@ -111,7 +115,7 @@ async function getAllPrints() {
 						Authorization: `Bearer ${storedToken}`,
 						"Content-Type": "application/json",
 					},
-				}
+				},
 			);
 
 			if (!response.ok) {
@@ -283,7 +287,58 @@ function validateForm() {
 	return true;
 }
 
+function sortTable(n) {
+	var table,
+		rows,
+		switching,
+		i,
+		x,
+		y,
+		shouldSwitch,
+		dir,
+		switchcount = 0;
+	table = document.querySelector("table"); // Selects your data table
+	switching = true;
+	dir = "asc"; // Set the sorting direction to ascending
 
+	while (switching) {
+		switching = false;
+		rows = table.rows;
 
+		// Loop through all table rows (except the header)
+		for (i = 1; i < rows.length - 1; i++) {
+			shouldSwitch = false;
+			x = rows[i].getElementsByTagName("TD")[n];
+			y = rows[i + 1].getElementsByTagName("TD")[n];
 
+			// Check if the content is a number or string
+			var xContent = isNaN(parseFloat(x.innerHTML)) ? x.innerHTML.toLowerCase() : parseFloat(x.innerHTML);
+			var yContent = isNaN(parseFloat(y.innerHTML)) ? y.innerHTML.toLowerCase() : parseFloat(y.innerHTML);
+
+			if (dir == "asc") {
+				if (xContent > yContent) {
+					shouldSwitch = true;
+					break;
+				}
+			} else if (dir == "desc") {
+				if (xContent < yContent) {
+					shouldSwitch = true;
+					break;
+				}
+			}
+		}
+		if (shouldSwitch) {
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+			switchcount++;
+		} else {
+			// If no switching has been done and the direction is "asc",
+			// set direction to "desc" and run the loop again.
+			if (switchcount == 0 && dir == "asc") {
+				dir = "desc";
+				switching = true;
+			}
+		}
+	}
+}
 ////////////////////////////////////////

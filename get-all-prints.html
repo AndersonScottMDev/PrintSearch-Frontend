@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -23,16 +23,16 @@
 					<label>DRAWING NAME (Optional) : </label>
 				</div>
 				<div>
-					<label>DIAMETER MIN : </label>
+					<label>DIAMETER MIN (inches) : </label>
 				</div>
 				<div>
-					<label>DIAMETER MAX : </label>
+					<label>DIAMETER MAX (inches): </label>
 				</div>
 				<div>
-					<label>FACE LENGTH MIN : </label>
+					<label>FACE LENGTH MIN (inches): </label>
 				</div>
 				<div>
-					<label>FACE LENGTH MAX : </label>
+					<label>FACE LENGTH MAX (inches): </label>
 				</div>
 			</div>
 
@@ -60,57 +60,42 @@
 		<div>
 			<button id="get-all-prints" type="button">Get All Prints</button>
 		</div>
-
+		<thead>
+			<tr>
+				<th onclick="sortTable(0)">ID</th>
+				<th onclick="sortTable(1)">PRINT NAME</th>
+				<th onclick="sortTable(2)">CUST</th>
+				<th onclick="sortTable(3)">OEM</th>
+				<th onclick="sortTable(4)">DIA</th>
+			</tr>
+		</thead>
 		<div class="table-output">
 			<table>
 				<thead>
 					<tr>
-						<th>ID</th>
-						<!--#01-->
-						<th>PRINT NAME</th>
-						<!--#02-->
-						<th>CUST</th>
-						<!--#03-->
-						<th>OEM</th>
-						<!--#04-->
-						<th>DIA</th>
-						<!--#05-->
-						<th>FACE LENGTH</th>
-						<!--#06-->
-						<th>BEARING MIN</th>
-						<!--#07-->
-						<th>BEARING MAX</th>
-						<!--#08-->
-						<th>CUST PIN</th>
-						<!--#09-->
-						<th>CUST REVISION</th>
-						<!--#10-->
-						<th>DATE</th>
-						<!--#11-->
-						<th>DATE CREATED</th>
-						<!--#12-->
-						<th>ORIGIN CUST</th>
-						<!--#13-->
-						<th>PART NO</th>
-						<!--#14-->
-						<th>PREV PART NO</th>
-						<!--#15-->
-						<th>PROD CODE</th>
-						<!--#16-->
-						<th>REV NUM</th>
-						<!--#17-->
-						<th>STEPS</th>
-						<!--#18-->
-						<th>SUB CONTR</th>
-						<!--#19-->
-						<th>TYPE</th>
-						<!--#20-->
-						<th>DMG PATH</th>
-						<!--#21-->
-						<th>SCAN PATH</th>
-						<!--#22-->
-						<th>PDF PATH</th>
-						<!--#23-->
+						<th onclick="sortTable(0)">ID</th>
+						<th onclick="sortTable(1)">PRINT NAME</th>
+						<th onclick="sortTable(2)">CUST</th>
+						<th onclick="sortTable(3)">OEM</th>
+						<th onclick="sortTable(4)">DIA</th>
+						<th onclick="sortTable(5)">FACE LENGTH</th>
+						<th onclick="sortTable(6)">BEARING MIN</th>
+						<th onclick="sortTable(7)">BEARING MAX</th>
+						<th onclick="sortTable(8)">CUST PIN</th>
+						<th onclick="sortTable(9)">CUST REVISION</th>
+						<th onclick="sortTable(10)">DATE</th>
+						<th onclick="sortTable(11)">DATE CREATED</th>
+						<th onclick="sortTable(12)">ORIGIN CUST</th>
+						<th onclick="sortTable(13)">PART NO</th>
+						<th onclick="sortTable(14)">PREV PART NO</th>
+						<th onclick="sortTable(15)">PROD CODE</th>
+						<th onclick="sortTable(16)">REV NUM</th>
+						<th onclick="sortTable(17)">STEPS</th>
+						<th onclick="sortTable(18)">SUB CONTR</th>
+						<th onclick="sortTable(19)">TYPE</th>
+						<th onclick="sortTable(20)">DMG PATH</th>
+						<th onclick="sortTable(21)">SCAN PATH</th>
+						<th onclick="sortTable(22)">PDF PATH</th>
 					</tr>
 				</thead>
 

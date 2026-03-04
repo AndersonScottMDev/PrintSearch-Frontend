@@ -22,8 +22,8 @@ async function loginUser(event) {
 	const password = document.getElementById("password").value;
 
 	try {
-		const loginPage = "https://printsearch-frontend-production.up.railway.app";
-		const apiBaseUrl = "https://printdrawingsearchapi-production.up.railway.app";
+		const loginPage = "http://127.0.0.1:5500";
+		const apiBaseUrl = "http://localhost:8082";
 		const response = await fetch(`${apiBaseUrl}/api/authenticate`, {
 			method: "POST",
 			headers: {

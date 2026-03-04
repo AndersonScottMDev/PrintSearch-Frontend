@@ -34,8 +34,11 @@ async function submitUserRegistration() {
 		};
 
 		try {
-			const loginPage = "https://printsearch-frontend-production.up.railway.app/";
-			const apiBaseUrl = "https://printdrawingsearchapi-production.up.railway.app";
+			// const loginPage = "http://127.0.0.1:5500";
+			// const apiBaseUrl = "http://127.0.0.1:8082";
+			const loginPage = "https://scottmichaelandersondev.com";
+			const apiBaseUrl = "https://printsearchapp.scottmichaelandersondev.com";
+
 			const response = await fetch(`${apiBaseUrl}/api/register/user`, {
 				method: "POST",
 				headers: {
