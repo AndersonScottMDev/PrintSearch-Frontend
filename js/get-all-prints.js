@@ -104,7 +104,6 @@ async function getAllPrints() {
 		try {
 			// const apiBaseUrl = "http://127.0.0.1:8082";
 
-			// const loginPage = "https://scottmichaelandersondev.com";
 			const apiBaseUrl = "https://printsearchapp.scottmichaelandersondev.com";
 
 			const response = await fetch(
@@ -206,7 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 });
-
 function createPrintDrawingHtml(contentArray) {
 	console.log("createPrintDrawingHtml() Method Start.......");
 	let htmlOutput = `
@@ -219,17 +217,10 @@ function createPrintDrawingHtml(contentArray) {
 	<td> ${contentArray.faceLengthMinValue}</td>
 	<td> ${contentArray.bearingMin}</td>
 	<td> ${contentArray.bearingMax}</td>
-	<td>${contentArray.customerPin}</td>
-	<td> ${contentArray.customerRevision}</td>
-	<td> ${contentArray.date}</td>
+
 	<td> ${contentArray.dateCreated}</td>
-	<td> ${contentArray.originatingCustomer}</td>
-	<td>${contentArray.partNo}</td>
-	<td>${contentArray.prevPartNo}</td>
-	<td>${contentArray.productCode}</td>
 	<td> ${contentArray.revNumber}</td>
 	<td> ${contentArray.steps}</td>
-	<td> ${contentArray.subcontractor}</td>
 	   <td> ${contentArray.type}</td>
 		  <td> ${contentArray.dmgDrawingPath}</td>
 	<td> ${contentArray.scannedPath}</td>
@@ -237,6 +228,35 @@ function createPrintDrawingHtml(contentArray) {
 	
 	
 	`;
+	// function createPrintDrawingHtml(contentArray) {
+	// 	console.log("createPrintDrawingHtml() Method Start.......");
+	// 	let htmlOutput = `
+
+	// 					<td> ${contentArray.id}</td>
+	// 	<td>${contentArray.drawingName}</td>
+	// 	<td> ${contentArray.customer}</td>
+	// 	<td> ${contentArray.oem}</td>
+	// 	<td>${contentArray.diameterMinValue}</td>
+	// 	<td> ${contentArray.faceLengthMinValue}</td>
+	// 	<td> ${contentArray.bearingMin}</td>
+	// 	<td> ${contentArray.bearingMax}</td>
+	// 	<td>${contentArray.customerPin}</td>
+	// 	<td> ${contentArray.customerRevision}</td>
+	// 	 <td> ${contentArray.date}</td>
+	// 	<td> ${contentArray.dateCreated}</td>
+	// 	<td> ${contentArray.originatingCustomer}</td>
+	// 	<td>${contentArray.partNo}</td>
+	// 	<td>${contentArray.prevPartNo}</td>
+	// 	<td>${contentArray.productCode}</td>
+	// 	<td> ${contentArray.revNumber}</td>
+	// 	<td> ${contentArray.steps}</td>
+	// 	<td> ${contentArray.subcontractor}</td>
+	// 	   <td> ${contentArray.type}</td>
+	// 		  <td> ${contentArray.dmgDrawingPath}</td>
+	// 	<td> ${contentArray.scannedPath}</td>
+	// 		  <td> ${contentArray.pdfPath}</td>
+
+	// 	`;
 
 	return htmlOutput;
 }

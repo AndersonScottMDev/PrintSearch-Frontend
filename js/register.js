@@ -47,11 +47,17 @@ async function submitUserRegistration() {
 				body: JSON.stringify(userObject), // Removed the extra { userObject } wrapping
 			});
 
-			if (!response.ok) {
-				console.log("Request to server has failed");
-				throw new Error("Invalid credentials for registration request");
-			}
+			// if (!response.ok) {
+			// 	console.log("Request to server has failed");
+			// 	throw new Error("Invalid credentials for registration request");
+			// }
 
+			if (!response.ok) {
+				// Get the actual error message from the server if possible
+				const errorDetail = await response.text();
+				console.error("Server Error Detail:", errorDetail);
+				throw new Error(errorDetail || "Invalid registration request");
+			}
 			const token = await response.text();
 
 			localStorage.setItem("token", token);
